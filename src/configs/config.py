@@ -1,0 +1,12 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+class Config:
+    EPIC_CLIENT_ID = os.getenv("EPIC_CLIENT_ID")
+    EPIC_PRIVATE_KEY_PATH = os.getenv("EPIC_PRIVATE_KEY_PATH")
+    EPIC_TOKEN_URL = os.getenv("EPIC_TOKEN_URL", "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/token")
+    EPIC_SCOPES = os.getenv("EPIC_SCOPES", "system/Patient.read system/Appointment.read").split()
+    REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+    REDIS_PORT = os.getenv("REDIS_PORT", "6379")
+    REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
