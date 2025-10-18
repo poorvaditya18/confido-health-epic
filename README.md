@@ -25,3 +25,13 @@ pull the latest docker image with correctly mention PORT number same as in envs.
 
 change directory to src : `cd src/`
 start the server using `uvicorn main:app --reload --host 0.0.0.0 --port 8000`
+
+# API :
+
+- for generating token : provide `x-source-type` in request headers
+
+  request :
+  `curl --location --request POST 'localhost:8000/confido-health/api/v1/auth' --header 'x-source-type: epic'`
+
+  2xx response:
+  `{ "source": "epic", "access_token": <ACCESS_TOKEN> }`
