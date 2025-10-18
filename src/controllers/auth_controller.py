@@ -9,7 +9,7 @@ async def generate_token(x_source_type: str = Header(...)):
         source = x_source_type.lower()
         source_service = get_auth_service(source)
         result = await source_service.generate_access_token()
-        return {"source": source, "result": result}
+        return {"source": source, "access_token": result}
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except NotImplementedError as e:

@@ -6,7 +6,7 @@ class Config:
     EPIC_CLIENT_ID = os.getenv("EPIC_CLIENT_ID")
     EPIC_PRIVATE_KEY_PATH = os.getenv("EPIC_PRIVATE_KEY_PATH")
     EPIC_TOKEN_URL = os.getenv("EPIC_TOKEN_URL", "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/token")
-    EPIC_SCOPES = os.getenv("EPIC_SCOPES", "system/Patient.read system/Appointment.read").split()
+    EPIC_SCOPES = os.getenv("EPIC_SCOPES", "system/Patient.read system/Appointment.read system/Practitioner.read system/Patient.search system/Appointment.search system/Location.read System/Location.search system/Practitioner.search system/Patient/*.read system/Appointment/*.read system/Group.read").split()
     REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
     REDIS_PORT = os.getenv("REDIS_PORT", "6379")
     REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")

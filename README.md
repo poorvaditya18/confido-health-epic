@@ -8,3 +8,7 @@ EPIC_SCOPES=
 REDIS_PORT=
 REDIS_HOST=
 REDIS_PASSWORD=
+
+
+# start server: 
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
