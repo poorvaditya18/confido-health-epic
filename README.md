@@ -1,6 +1,9 @@
-# Auth Service
+# CONFIDO AUTH SERVICE:
+
+description : responsible of generating auth, refresh tokens with data sources. Currently support SMART Oauth on FHIR.
 
 # setup envs
+
 EPIC_CLIENT_ID=
 EPIC_PRIVATE_KEY_PATH=
 EPIC_TOKEN_URL=
@@ -9,6 +12,16 @@ REDIS_PORT=
 REDIS_HOST=
 REDIS_PASSWORD=
 
+NOTE:
 
-# start server: 
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+- set the `EPIC_PRIVATE_KEY_PATH` of your local machine. file should look like `privatekey.pem`
+- `EPIC_SCOPES` should be correctly provided : example system/Patient.read system/Appointment.read
+
+# for setting up REDIS -
+
+pull the latest docker image with correctly mention PORT number same as in envs.
+
+# start server:
+
+change directory to src : `cd src/`
+start the server using `uvicorn main:app --reload --host 0.0.0.0 --port 8000`
