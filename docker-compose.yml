@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  confido-auth:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      EPIC_PRIVATE_KEY_PATH: /app/keys/privatekey.pem
+      REDIS_HOST: confido-redis
+    volumes:
+      - /Users/poorvadityabehre/Desktop/epic-key/privatekey.pem:/app/keys/privatekey.pem:ro
+    networks:
+      - confido-network
+
+networks:
+  confido-network:
+    external: true

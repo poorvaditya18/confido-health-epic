@@ -35,3 +35,10 @@ start the server using `uvicorn main:app --reload --host 0.0.0.0 --port 8000`
 
   2xx response:
   `{ "source": "epic", "access_token": <ACCESS_TOKEN> }`
+
+# Docker :
+
+- Pull Redis Image using `docker pull redis:latest`.
+- Start `docker run -d --name confido-redis -p 6379:6379 redis:latest`
+- Note: provide the correct path of `EPIC_PRIVATE_KEY_PATH` in docker-compose file in volumes.
+- Then build the docker-compose using `docker-compose up --build`.
